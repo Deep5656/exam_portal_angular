@@ -1,0 +1,20 @@
+<!-- <p>navbar works!</p> -->
+
+<mat-toolbar color="accent">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>book</mat-icon>
+    </button>
+    <a routerLink="/" class="home-style"><span>Exam Portal</span></a>
+    <span class="example-spacer"></span>
+    <a [routerLink]="'/login'" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <!-- <mat-icon>login</mat-icon> -->
+      <p class="font-size">Login</p>
+    </a>
+    <a [routerLink]="'/signup'" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <!-- <mat-icon>login</mat-icon> -->
+      <p class="font-size">Register</p>
+      
+    </a>
+   
+   
+  </mat-toolbar>
