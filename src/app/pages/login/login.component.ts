@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginComponent {
   };
 
 
-  constructor(private snack:MatSnackBar,private login:LoginService){}
+  constructor(private snack:MatSnackBar,private login:LoginService,private router:Router){}
 
 
 
@@ -55,6 +56,22 @@ export class LoginComponent {
 
             //redirect ... ADMIN : admin-dashboard
             //redirect ... NORMAL : mormal-dashboard
+            if(this.login.getUserRole()=='ADMIN')
+            {
+
+              // window.location.href = '/admin';
+              this.router.navigate(['admin']);
+              this.login.loginStatusSubject.next(true);
+            }else if(this.login.getUserRole()=="NORMAL")
+            {
+
+              // window.location.href = '/user-dashboard';
+              this.router.navigate(['user-dashboard']);
+              this.login.loginStatusSubject.next(true);
+
+            }else{
+              this.login.logout();
+            }
             
           }
         )
@@ -63,6 +80,9 @@ export class LoginComponent {
       (error)=>{
         console.log("Error");
         console.log(error);
+        this.snack.open("Invalid Details !!","try again",{
+          duration:3000,
+        });
       }
     );
     

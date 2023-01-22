@@ -6,14 +6,21 @@
     </button>
     <a routerLink="/" class="home-style"><span>Exam Portal</span></a>
     <span class="example-spacer"></span>
-    <a [routerLink]="'/login'" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <!-- <mat-icon>login</mat-icon> -->
+
+    <a *ngIf="!isLoggedin" [routerLink]="'/login'" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <p class="font-size">Login</p>
     </a>
-    <a [routerLink]="'/signup'" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <!-- <mat-icon>login</mat-icon> -->
+
+    <a *ngIf="!isLoggedin" [routerLink]="'/signup'" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <p class="font-size">Register</p>
-      
+    </a>
+
+    <a (click)="logout()" *ngIf="isLoggedin" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <p class="font-size">Logout</p>
+    </a>
+    
+    <a *ngIf="isLoggedin" style="margin-right: 30px;color: black;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <p class="font-size">{{user}}</p>
     </a>
    
    
