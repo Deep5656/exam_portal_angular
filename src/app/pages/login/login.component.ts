@@ -58,13 +58,12 @@ export class LoginComponent {
             //redirect ... NORMAL : mormal-dashboard
             if(this.login.getUserRole()=='ADMIN')
             {
-
               // window.location.href = '/admin';
               this.router.navigate(['admin']);
               this.login.loginStatusSubject.next(true);
+              
             }else if(this.login.getUserRole()=="NORMAL")
             {
-
               // window.location.href = '/user-dashboard';
               this.router.navigate(['user-dashboard']);
               this.login.loginStatusSubject.next(true);

@@ -19,9 +19,8 @@
       <p class="font-size">Logout</p>
     </a>
     
-    <a *ngIf="isLoggedin" style="margin-right: 30px;color: black;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <p class="font-size">{{user}}</p>
+    <a *ngIf="isLoggedin && user" style="margin-right: 40px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <p class="font-size">{{user.username}}</p>
     </a>
-   
-   
+    
   </mat-toolbar>

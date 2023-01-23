@@ -21,6 +21,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { authInterceptorProviders } from './services/auth.intercepter';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -34,6 +35,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     HomeComponent,
     DashboardComponent,
     UserDashboardComponent,
+    ProfileComponent,
 
   ],
   imports: [
