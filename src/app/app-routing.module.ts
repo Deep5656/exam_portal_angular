@@ -12,6 +12,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,10 @@ const routes: Routes = [
       {
         path:'quizzes',
         component:ViewQuizzesComponent,
+      },
+      {
+        path:'add-quiz',
+        component:AddQuizComponent,
       },
     ],
 
