@@ -1,3 +1,5 @@
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
@@ -39,6 +41,14 @@ const routes: Routes = [
       {
         path:'profile',
         component:ProfileComponent,
+      },
+      {
+        path:'categories',
+        component:ViewCategoriesComponent,
+      },
+      {
+        path:'add-category',
+        component:AddCategoryComponent,
       },
     ],
 
