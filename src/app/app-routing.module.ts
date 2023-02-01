@@ -1,3 +1,4 @@
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { NgModule } from '@angular/core';
@@ -49,6 +50,10 @@ const routes: Routes = [
       {
         path:'add-category',
         component:AddCategoryComponent,
+      },
+      {
+        path:'quizzes',
+        component:ViewQuizzesComponent,
       },
     ],
 
