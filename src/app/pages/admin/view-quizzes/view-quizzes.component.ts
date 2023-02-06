@@ -11,7 +11,7 @@ export class ViewQuizzesComponent implements OnInit {
 
   quizzes = [
     {
-      qId: 23,
+      qid: 23,
       title: 'Basic Java Quiz',
       description: 'The word Core describes the basic concept of something, and here, the phrase Core Java defines the basic Java that covers the basic concept of Java programming language.',
       maxMarks: '50',
@@ -36,6 +36,34 @@ export class ViewQuizzesComponent implements OnInit {
       console.log(error);
       Swal.fire("Error !","Error in loading data !","error");
       
+    });
+  }
+
+  //delete quiz...
+  // Swal.fire("Success","Quizz Deleted","success");
+
+
+  deleteQuiz(qId:any){
+   
+
+    Swal.fire({
+      icon:'warning',
+      title:'are you sure ?',
+      confirmButtonText:'Delete',
+      showCancelButton:true,
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this._quiz.deleteQuiz(qId).subscribe(
+          (data:any)=>{
+    
+          this.quizzes = this.quizzes.filter((quiz)=>quiz.qid != qId);
+          Swal.fire("Success","Quiz Deleted","success");
+        },
+        (error)=>{
+          Swal.fire("Error","error in deleting quiz","error");
+    
+        });
+      }
     });
   }
 

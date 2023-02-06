@@ -35,9 +35,7 @@ export class SignupComponent implements OnInit {
       return;
     }
 
-    // validate..
-
-    
+    // validate...
 
     //aduser:userservice
     this.userService.addUser(this.user).subscribe(

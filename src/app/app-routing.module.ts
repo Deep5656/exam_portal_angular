@@ -13,6 +13,9 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 
 const routes: Routes = [
   {
@@ -60,6 +63,19 @@ const routes: Routes = [
         path:'add-quiz',
         component:AddQuizComponent,
       },
+      {
+        path:'quiz/:qid',
+        component:UpdateQuizComponent,
+      },
+      {
+        path:'view-questions/:qid/:title',
+        component:ViewQuizQuestionsComponent,
+      },
+      {
+        path:'add-question/:qid/:title',
+        component:AddQuestionComponent,
+      },
+     
     ],
 
   },
