@@ -1,0 +1,47 @@
+<!-- <p>start works!</p> -->
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- instruction -->
+                <h3>Instructions</h3>
+            </div>
+            <div class="col-md-8 mt10">
+                <!-- questions -->
+                <ng-container>
+                    <h1>On Going Quiz <b class="color">{{questions[0].quiz.title}}</b></h1>
+                </ng-container>
+                <mat-card *ngFor="let q of questions;let i = index" class="mb10">
+                    <mat-card-content>
+                        <p><b>Q{{i+1}}: </b> <span>{{q.content}}</span></p>
+                        
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" [name]="i" id="" [value]="q.option1"/>{{q.option1}}
+                            </div>
+                            <div class="col-md-6">
+                                <input type="radio" [name]="i" id="" [value]="q.option2"/>{{q.option2}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio" [name]="i" id="" [value]="q.option3"/>{{q.option3}}
+                            </div>
+                            <div class="col-md-6">
+                                <input type="radio" [name]="i" id="" [value]="q.option4"/>{{q.option4}}
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                <div class="container text-center">
+                    <button mat-raised-button color="primary">Submit</button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <!-- progress -->
+            </div>
+        </div>
+
+    </div>
+</div>

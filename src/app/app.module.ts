@@ -36,6 +36,9 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
@@ -61,6 +64,9 @@ import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.com
     ViewQuizQuestionsComponent,
     AddQuestionComponent,
     SidebarUserComponent,
+    LoadQuizComponent,
+    InstructionsComponent,
+    StartComponent,
 
 
   ],

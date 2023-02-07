@@ -9,6 +9,7 @@
             <mat-icon matListItemIcon color="accent">category</mat-icon>
             <div matListItemTitle>{{c.title}}</div>
             <div matListItemLine>{{c.description}}</div>
+            <div><button matListItemLine mat-raised-button color="accent" class="right"(click)="deleteCategory(c.cid)">Delete</button></div>
             <hr>
             <!-- <mat-divider></mat-divider> -->
         </mat-list-item>

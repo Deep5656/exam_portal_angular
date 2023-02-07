@@ -13,9 +13,9 @@ export class ViewCategoriesComponent implements OnInit {
 
   categories = [
     {
-      cid: 23,
-      title: 'progarmming',
-      description: 'this is testing category',
+      cid: '',
+      title: '',
+      description: '',
     },
   ];
 
@@ -31,6 +31,28 @@ export class ViewCategoriesComponent implements OnInit {
         console.log(error);
         Swal.fire("Error !!", "error in loading data", "error");
       })
+  }
+
+
+  // deleting category
+  deleteCategory(cid: any) {
+
+    Swal.fire({
+      icon: 'warning',
+      title: 'are you sure ?',
+      confirmButtonText: 'Delete',
+      showCancelButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._category.deleteCategory(cid).subscribe(
+          (data: any) => {
+          this.categories=this.categories.filter((category) => category.cid != cid)
+          Swal.fire("Success", "Category Deleted", "success");
+        }, (error) => {
+          Swal.fire("Error", "First Delete Quizzes of this category", "error");
+        })
+      }
+    });
   }
 
 }
