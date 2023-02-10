@@ -39,7 +39,6 @@ const routes: Routes = [
   {
     path:'admin',
     component:DashboardComponent,
-    // pathMatch:'full',
     canActivate:[AdminGuard],
     children:[
       {
@@ -78,6 +77,7 @@ const routes: Routes = [
         path:'add-question/:qid/:title',
         component:AddQuestionComponent,
       },
+    
      
     ],
 

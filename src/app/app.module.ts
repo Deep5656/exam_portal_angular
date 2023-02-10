@@ -39,7 +39,6 @@ import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.com
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartComponent } from './pages/user/start/start.component';
-// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 
@@ -67,8 +66,6 @@ import { StartComponent } from './pages/user/start/start.component';
     LoadQuizComponent,
     InstructionsComponent,
     StartComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -87,7 +84,6 @@ import { StartComponent } from './pages/user/start/start.component';
     MatDividerModule,
     MatSlideToggleModule,
     MatSelectModule,
-    // CKEditorModule,
   ],
 
   providers: [authInterceptorProviders],
