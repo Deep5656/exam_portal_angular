@@ -39,6 +39,9 @@ import { SidebarUserComponent } from './pages/user/sidebar-user/sidebar-user.com
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartComponent } from './pages/user/start/start.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+
 
 
 
@@ -84,6 +87,11 @@ import { StartComponent } from './pages/user/start/start.component';
     MatDividerModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true,
+    }),
   ],
 
   providers: [authInterceptorProviders],

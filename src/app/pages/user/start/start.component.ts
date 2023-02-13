@@ -17,6 +17,8 @@ export class StartComponent implements OnInit {
   attempted = 0;
   isSubmit = false;
 
+  timer:any;
+
   constructor(private _route: ActivatedRoute, private _question: QuestionService) { }
 
   ngOnInit(): void {
@@ -35,11 +37,16 @@ export class StartComponent implements OnInit {
     this._question.getQuestionsOfQuizForTest(this.qid).subscribe(
       (data) => {
         // console.log(data);
+
         this.questions = data;
-        this.questions.forEach((q:any)=>{
-          q['givenAnswer']='';
-        });
+
+        this.timer=this.questions.length*2*60;
+
+        // this.questions.forEach((q:any)=>{
+        //   q['givenAnswer']='';
+        // });
         console.log(this.questions);
+        this.startTimer();
         
 
       },
@@ -58,27 +65,69 @@ export class StartComponent implements OnInit {
     }).then((e)=>{
       if(e.isConfirmed){
         //calculation
-
-        this.isSubmit=true;
-
-
-        console.log(this.questions);
-        this.questions.forEach((q:any)=>{
-          if(q.givenAnswer==q.answer){
-            this.correctAnswers++;
-            let marksSingle = this.questions[0].quiz.maxMarks/this.questions.length;
-            this.marksGot += marksSingle;
-          }
-          if(q.givenAnswer.trim()!=''){
-            this.attempted++;
-          }
-        });
-        console.log("correct Answers : "+ this.correctAnswers);
-        console.log("Marks Got : "+this.marksGot);
-        console.log("Attempted : "+this.attempted);
-        
-        
+        this.evalQuiz();
       }
     })
   }
+
+  startTimer(){
+    let t = window.setInterval(()=>{
+      //code
+      if(this.timer<=0){
+        this.evalQuiz();
+        clearInterval(t);
+      }else{
+        this.timer--;
+      }
+    },1000)
+  }
+
+
+
+  getFormattedTime(){
+    let mm = Math.floor(this.timer/60);
+    let ss = this.timer-mm*60;
+    return `${mm} min : ${ss} sec`;
+  }
+
+
+  evalQuiz(){
+
+    // call to server to check questions.
+    this._question.evalQuiz(this.questions).subscribe((data:any)=>{
+      console.log(data); 
+      this.marksGot = parseFloat(Number(data.marksGot).toFixed(2));
+      this.correctAnswers = data.correctAnswers;
+      this.attempted = data.attempted;
+      this.isSubmit = true;
+    },(error)=>{
+      console.log(error);
+    });
+
+   // this.isSubmit=true;
+
+
+    // console.log(this.questions);
+    // this.questions.forEach((q:any)=>{
+    //   if(q.givenAnswer==q.answer){
+    //     this.correctAnswers++;
+    //     let marksSingle = this.questions[0].quiz.maxMarks/this.questions.length;
+    //     this.marksGot += marksSingle;
+    //   }
+    //   if(q.givenAnswer.trim()!=''){
+    //     this.attempted++;
+    //   }
+    // });
+    // console.log("correct Answers : "+ this.correctAnswers);
+    // console.log("Marks Got : "+this.marksGot);
+    // console.log("Attempted : "+this.attempted);
+  
+
+  }
+
+  printPage(){
+    window.print();
+  }
+
+
 }
