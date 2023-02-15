@@ -11,9 +11,9 @@
         <button mat-raised-button color="accent" [routerLink]="'/admin/view-questions/'+q.qid+'/'+q.title">Questions</button>
         <button mat-stroked-button color="accent" class="ml10">Max Marks {{q.maxMarks}}</button>
         <button mat-stroked-button color="accent" class="ml10">Question {{q.noOfQuestions}}</button>
-        <button mat-flat-button color="accent" class="ml10">Update</button>
+        <button mat-flat-button color="accent" class="ml10" [routerLink]="'/admin/quiz/'+q.qid">Update</button>
         <button mat-flat-button color="accent" class="ml10">Attempts</button>
-        <button mat-flat-button color="warn" class="ml10" (click)="deleteQuiz(q.qid)">Delete</button>
+        <button mat-flat-button color="primary" class="ml10" (click)="deleteQuiz(q.qid)">Delete</button>
     </mat-card-actions>
 </mat-card>
 
