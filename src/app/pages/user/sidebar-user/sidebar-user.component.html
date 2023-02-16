@@ -2,8 +2,8 @@
 <mat-card class="position">
     <mat-action-list>
         <div mat-subheader>Available categories
-            <button  mat-list-item routerLink="/user-dashboard/0"><mat-icon class="btn" mat-list-icon color="accent">quiz</mat-icon>&ensp;All Quizzes</button>
-            <button  [routerLink]="'/user-dashboard/'+c.cid" mat-list-item *ngFor="let c of categories"><mat-icon class="btn" mat-list-icon color="accent">quiz</mat-icon>&ensp;{{c.title}}</button>
+            <button  mat-list-item routerLink="/user-dashboard/0"><mat-icon class="top" mat-list-icon color="accent">quiz</mat-icon>&ensp;All Quizzes</button>
+            <button  [routerLink]="'/user-dashboard/'+c.cid" mat-list-item *ngFor="let c of categories"><mat-icon class="top" mat-list-icon color="accent">quiz</mat-icon>&ensp;{{c.title}}</button>
         </div>
     </mat-action-list>
 </mat-card>

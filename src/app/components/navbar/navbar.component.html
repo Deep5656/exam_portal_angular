@@ -19,7 +19,7 @@
       <p class="font-size">Logout</p>
     </a>
     
-    <a *ngIf="isLoggedin && user" routerLink="/admin/profile" style="margin-right: 40px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <a *ngIf="isLoggedin && user" routerLink="/admin/profile" style="margin-right: 40px;text-decoration: none;color:white;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <p class="font-size">{{user.username}}</p>
     </a>
     

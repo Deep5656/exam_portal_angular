@@ -41,6 +41,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { StartComponent } from './pages/user/start/start.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -92,6 +93,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true,
     }),
+    FontAwesomeModule,
   ],
 
   providers: [authInterceptorProviders],
