@@ -18,11 +18,6 @@ export class QuizService {
     return this._http.post(`${baseUrl}/quiz/`,quiz);
   }
 
-  //delete quiz ...
-  public deleteQuiz(qId:any){
-    return this._http.delete(`${baseUrl}/quiz/${qId}`);
-  }
-
   //get single quiz ...
   public getQuiz(qId:any){
     return this._http.get(`${baseUrl}/quiz/${qId}`)
@@ -46,5 +41,10 @@ export class QuizService {
   // get active quizzes of category
   public getActiveQuizzesOfCategory(cid:any){
     return this._http.get(`${baseUrl}/quiz/category/active/${cid}`);
+  }
+
+  //delete quiz ...
+  public deleteQuiz(qId:any){
+    return this._http.delete(`${baseUrl}/quiz/${qId}`);
   }
 }
