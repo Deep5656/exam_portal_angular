@@ -1,14 +1,18 @@
 <!-- <p>navbar works!</p> -->
 
-<mat-toolbar color="accent" class="position">
+<mat-toolbar color="primary" class="position">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>book</mat-icon>
     </button>
-    <a routerLink="/" class="home-style"><span>Exam Portal</span></a>
+    <a routerLink="/" class="home-style"><span>Pariksha Exam Portal</span></a>
     <span class="example-spacer"></span>
 
-    <a *ngIf="!isLoggedin" [routerLink]="'/login'" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <a *ngIf="!isLoggedin" [routerLink]="'/login'" style="margin-right: 10px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <p class="font-size">Login</p>
+    </a>
+
+    <a *ngIf="!isLoggedin" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <p class="font-size">|</p>
     </a>
 
     <a *ngIf="!isLoggedin" [routerLink]="'/signup'" style="margin-right: 30px;" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">

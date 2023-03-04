@@ -14,6 +14,8 @@
     text-align: center;
   }
   .back{
-    background-color: #ff4081;
+    background-color: #3f51b5;
+    position: -webkit-sticky;
+    bottom: 0;
   }
  

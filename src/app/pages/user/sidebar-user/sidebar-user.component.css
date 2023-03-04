@@ -5,4 +5,5 @@
 .position{
     position: sticky;
     top: 95px;
+    height: 76vh;
 }
